@@ -1,0 +1,14 @@
+@use "../global/setting" as *;
+
+section {
+    width: 100%;
+    height: auto;
+    margin-top: 180px;
+}
+
+.sec-title {
+    color: $font-white;
+    font-size: 2.25rem;
+    font-weight: 600;
+    text-align: center;
+}

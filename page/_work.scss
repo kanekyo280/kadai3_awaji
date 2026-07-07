@@ -1,0 +1,29 @@
+@use "../global/setting" as *;
+
+.work-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    gap: 80px;
+}
+
+.work-item {
+    max-width: 400px;
+
+    & .item-title {
+        font-size: 1.5rem;
+        color: $font-white;
+        text-align: center;
+    }
+
+    & img {
+        margin: 24px 0;
+    }
+
+    & p {
+        color: $font-white;
+        letter-spacing: 2px;
+        line-height: 1.5;
+    }
+}
