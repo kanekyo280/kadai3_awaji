@@ -1,0 +1,36 @@
+@use "../global/setting" as *;
+
+#about {
+    width: 100%;
+    padding-top: 234px;
+    position: relative;
+
+    & img {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 586px;
+        height: 419px;
+    }
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px;
+    padding: 60px 0 60px 40px;
+    background-color: $about-color;
+}
+
+.about-title {
+    font-size: 2.25rem;
+    color: $font-black;
+    margin-bottom: 10px;
+}
+
+.about-text {
+    display: block;
+    max-width: 50%;
+    line-height: 30px;
+}
