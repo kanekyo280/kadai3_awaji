@@ -1,0 +1,29 @@
+@use "../global/setting" as *;
+
+#news {
+    width: fit-content;
+    max-width: 500px;
+}
+
+.news-container {
+    background-color: $news-color;
+    padding: 1.5rem 2.5rem;
+    border-radius: 30px;
+
+    & .news-title {
+        color: $font-white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    & .news-item {
+        display: flex;
+        gap: 15px;
+        color: $font-white;
+
+        &:nth-child(2) {
+            margin: 8px 0;
+        }
+    }
+}
