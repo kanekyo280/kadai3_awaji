@@ -119,6 +119,19 @@ a {
      object-fit: cover;
 }
 
+section {
+  width: 100%;
+  height: auto;
+  margin-top: 180px;
+}
+
+.sec-title {
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 .main {
   width: 100%;
   height: 100vh;
@@ -249,4 +262,29 @@ a {
   display: block;
   max-width: 50%;
   line-height: 30px;
+}
+
+.work-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  gap: 80px;
+}
+
+.work-item {
+  max-width: 400px;
+}
+.work-item .item-title {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+.work-item img {
+  margin: 24px 0;
+}
+.work-item p {
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 1.5;
 }/*# sourceMappingURL=style.css.map */
