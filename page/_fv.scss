@@ -1,1 +1,78 @@
 @use "../global/setting" as *;
+
+.main {
+    width: 100%;
+    position: relative;
+
+
+    &-visual_onion {
+        width: 400px;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-visual_circle {
+        width: 600px;
+        object-fit: cover;
+        margin: 80px auto 0;
+    }
+
+    &-text {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: $font-white;
+
+        & h1 {
+            writing-mode: vertical-rl;
+            font-size: 4rem;
+            line-height: calc(80px + 30px);
+            letter-spacing: 1rem;
+        }
+
+        & h3 {
+            writing-mode: vertical-rl;
+            font-size: 1.5rem;
+            font-weight: normal;
+            letter-spacing: .5rem;
+        }
+    }
+
+}
+
+
+.scroll {
+    width: 196px;
+    height: 196px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(217, 217, 217,  0.1);
+    border-radius: 50%;
+    text-align: right;
+
+    & a {
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & p {
+            margin-bottom: 13px;
+            color: $font-white;
+        }
+
+        & img {
+        width: 10px;
+        }
+    }
+
+}
