@@ -367,4 +367,25 @@ button p {
 button img {
   width: 46px;
   height: 46px;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  margin-bottom: 128px;
+}
+.swiper-wrapper {
+  display: flex;
+  gap: 4px;
+}
+.swiper-slide {
+  width: 194px;
+  height: 194px;
+}
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=style.css.map */
