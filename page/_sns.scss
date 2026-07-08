@@ -1,0 +1,22 @@
+.swiper {
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    margin-bottom: 128px;
+
+    &-wrapper {
+        display: flex;
+        gap: 4px;
+    }
+
+    &-slide {
+        width: 194px;
+        height: 194px;
+
+        & img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}
