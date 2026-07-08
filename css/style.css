@@ -339,4 +339,32 @@ section {
   font-size: 1rem;
   line-height: 2;
   letter-spacing: 10%;
+}
+
+#contact {
+  width: 100%;
+  height: auto;
+  margin-top: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  width: 418px;
+  height: 110px;
+  background-color: #fff;
+  border-radius: 60px;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+button p {
+  font-size: 1.5rem;
+}
+button img {
+  width: 46px;
+  height: 46px;
 }/*# sourceMappingURL=style.css.map */
