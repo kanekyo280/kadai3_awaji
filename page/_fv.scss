@@ -63,12 +63,17 @@
     border-radius: 50%;
     text-align: right;
 
+
     & a {
         height: inherit;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        &:hover {
+            opacity: 20%;
+        }
 
         & p {
             margin-bottom: 13px;
