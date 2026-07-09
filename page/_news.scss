@@ -2,10 +2,12 @@
 
 #news {
     width: fit-content;
-    max-width: 500px;
+    margin-left: 72px;
+    max-width: 1280px;
 }
 
 .news-container {
+    max-width: 500px;
     background-color: $news-color;
     padding: 1.5rem 2.5rem;
     border-radius: 30px;

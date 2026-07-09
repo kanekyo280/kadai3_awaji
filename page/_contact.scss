@@ -20,6 +20,12 @@ button {
     justify-content: center;
     gap: 12px;
 
+    &:hover {
+        .contact-arrow {
+            transform: translateX(6px); 
+        }
+    }
+
     & p {
         font-size: 1.5rem;
     }
@@ -27,5 +33,10 @@ button {
     & img {
         width: 46px;
         height: 46px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateX(6px); 
+        }
     }
 }

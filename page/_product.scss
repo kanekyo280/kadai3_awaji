@@ -25,7 +25,8 @@
 .product-inner {
     position: relative;
     z-index: 1;
-    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +38,7 @@
     }
 
     &:nth-of-type(2) {
-        margin: 128px 0;
+        margin: 128px auto;
     }
 }
 
