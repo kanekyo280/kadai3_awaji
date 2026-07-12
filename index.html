@@ -6,9 +6,10 @@
     <title>淡路島の最高級玉ねぎ　宝玉</title>
     <link rel="stylesheet" href="https://unpkg.com/ress@5.0.2/dist/ress.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
 </head>
 <body>
-    <main id="top">
+    <header id="top">
         <nav id="nav">
             <ul class="nav-content">
                 <li class="nav-item"><a href="#top">トップ</a></li>
@@ -18,23 +19,35 @@
                 <li class="nav-item"><a href="#product">商品</a></li>
                 <li class="nav-item"><a href="#contact">お問い合わせ</a></li>
             </ul>
-        </nav>
 
-        <div class="main">
-            <img class="main-visual_onion" src="./img/main.png" alt="最高級玉ねぎ「宝玉」">
-            <img class="main-visual_circle" src="./img/Ellipse 1.png" alt="白い輪の装飾">
-            <div class="main-text">
-                <h1 class="main-title">宝玉</h1>
-                <h3 class="main-sub">淡路島の最高級玉ねぎ</h3>
+            <div class="nav-smp">
+                <span class="hamburger1"></span>
+                <span class="hamburger2"></span>
+                <span class="hamburger3"></span>
             </div>
-            <div class="scroll">
-                <a href="#about">
-                    <p>Scroll Down</p>
-                    <img src="./img/arrow/Vector-1.png" alt="down arrow">
-                </a>
+        </nav>
+    </header>
+
+        <main class="fv">
+            <div class="fv-container">
+                <img class="fv-visual_onion" src="./img/main.png" alt="最高級玉ねぎ「宝玉」">
+                <img class="fv-visual_circle" src="./img/Ellipse 1.png" alt="白い輪の装飾">
+                <div class="fv-text">
+                    <h1 class="fv-title">宝玉</h1>
+                    <h3 class="fv-sub">淡路島の最高級玉ねぎ</h3>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
+    
+
+    <div class="scroll">
+        <a href="#about">
+            <div class="scroll-btn">
+                <p>Scroll Down</p>
+                <img src="./img/arrow/Vector-1.png" alt="down arrow">
+            </div>
+        </a>
+    </div>
 
     <div id="news">
         <div class="news-container">
@@ -55,8 +68,9 @@
             </ul>
         </div>
     </div>
-
+    
     <div id="about">
+        <img src="./img/eeca8dcfd4138d7942bda4705ab56838679d69edfe24692e4c1df94a2918e7f6 1.png" alt="宝玉の画像">
         <div class="about-container">
             <h2 class="about-title">宝玉とは？</h2>
             <p class="about-text">
@@ -68,7 +82,6 @@
                 食べられるほどの品質を持っています。
             </p>
         </div>
-        <img src="./img/eeca8dcfd4138d7942bda4705ab56838679d69edfe24692e4c1df94a2918e7f6 1.png" alt="宝玉の画像">
     </div>
 
     <img class="bg-img" src="./img/bg.png" alt="bg-img"></img>
@@ -113,7 +126,6 @@
                 <img class="product-inner_img" src="./img/items/item1.png" alt="item1">
             </div>
             <div class="product-inner">
-                <img class="product-inner_img" src="./img/items/item2.png" alt="item2">
                 <div class="product-text">
                     <h4>１シーズン契約も可能</h4>
                     <p>
@@ -121,6 +133,7 @@
                         そこで契約期間も４半期ごとで柔軟に対応させていただきます。
                     </p>
                 </div>
+                <img class="product-inner_img" src="./img/items/item2.png" alt="item2">
             </div>
             <div class="product-inner">
                 <div class="product-text">
@@ -157,6 +170,9 @@
                 <li class="swiper-slide"><img src="./img/slide/slide-item7.png" alt="slide7"></li>
                 
             </ul>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </section>
 
@@ -179,6 +195,7 @@
         <p class="company">&copy;2024 ONIONKING</p>
     </footer>   
 <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 <script src="./js/swiper.js"></script>
 </body>
 </html>

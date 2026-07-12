@@ -1,6 +1,5 @@
 #sns {
     width: 100%;
-    margin: 0 auto;
 }
 
 .swiper {
@@ -10,11 +9,11 @@
     margin-bottom: 128px;
     overflow: hidden; 
 
-    &-wrapper {
-        display: flex;
-        width: max-content;
-        animation: swiper 20s linear infinite;
+    
 
+    &-button-prev,
+    &-button-next {
+        display: none;
     }
 
     &-slide {
@@ -28,6 +27,16 @@
             height: auto;
             object-fit: contain;
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .swiper {
+        &-wrapper {
+        display: flex;
+        width: max-content;
+        animation: swiper 20s linear infinite;
+    }
     }
 }
 
