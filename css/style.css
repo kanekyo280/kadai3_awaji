@@ -1,5 +1,5 @@
 html {
-  font-family: "YuMincho", serif;
+  font-family: "Yu Mincho", serif;
 }
 
 body {
@@ -13,10 +13,6 @@ img {
   height: auto;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -33,9 +29,6 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -44,27 +37,8 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 ol, ul {
   list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 a {
@@ -74,14 +48,15 @@ a {
 #top {
   width: 100%;
   padding: 0 72px;
-  margin: 0 auto;
+  z-index: 1;
 }
 
 #nav {
-  max-width: 1280px;
+  width: 100%;
 }
 
 .nav-content {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -180,35 +155,25 @@ section {
 
 .fv {
   width: 100%;
-  margin: 80px 0 110px;
-  height: 435px;
+  padding: 0 72px 110px;
+  margin-top: 80px;
+  height: 100vh;
 }
 .fv-container {
-  max-width: 1280px;
-  height: 100%;
-  padding: 0 72px;
-  margin: 0 auto;
+  width: 100%;
+  height: 50%;
   position: relative;
 }
 .fv-visual_onion {
-  width: 243px;
-  height: 243px;
+  width: 800px;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-.fv-visual_circle {
-  width: 435px;
-  height: 435px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
+  z-index: 0;
 }
 .fv-text {
   display: flex;
@@ -223,7 +188,6 @@ section {
 .fv-text h1 {
   writing-mode: vertical-rl;
   font-size: 4rem;
-  line-height: 110px;
   letter-spacing: 1rem;
 }
 .fv-text h3 {
@@ -234,8 +198,8 @@ section {
 }
 
 .scroll {
-  max-width: 1280px;
-  padding: 0 72px;
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: flex-end;
 }
@@ -264,12 +228,12 @@ section {
 }
 
 #news {
-  max-width: 1280px;
+  width: 100%;
   padding: 0 72px;
 }
 
 .news-container {
-  max-width: 500px;
+  max-width: 444px;
   background-color: #909294;
   padding: 1.5rem 2.5rem;
   border-radius: 30px;
@@ -290,25 +254,26 @@ section {
 }
 
 #about {
-  max-width: 1280px;
+  width: 100%;
+  height: auto;
   padding: 234px 72px 0;
-  margin: 0 auto;
   position: relative;
 }
 #about img {
   position: absolute;
-  top: 50px;
-  right: 0;
+  top: 80px;
+  right: 170px;
   width: 586px;
   height: 419px;
 }
 
 .about-container {
+  width: 904px;
+  height: 337px;
+  padding: 60px 0 60px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1000px;
-  padding: 60px 0 60px 40px;
   background-color: #E1E1E1;
 }
 
@@ -322,15 +287,16 @@ section {
   display: block;
   max-width: 50%;
   line-height: 30px;
-  letter-spacing: 10%;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
 }
 
 #work {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .work-content {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -350,7 +316,8 @@ section {
 }
 .work-item p {
   color: #fff;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
   line-height: 1.5;
 }
 
@@ -372,10 +339,10 @@ section {
 }
 
 .product-inner {
+  width: 100%;
   position: relative;
   z-index: 1;
-  max-width: 1280px;
-  margin: 0 auto;
+  padding: 0 115px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -391,7 +358,7 @@ section {
 }
 
 .product-text {
-  width: 100%;
+  max-width: 440px;
 }
 .product-text h4 {
   color: #fff;
@@ -402,7 +369,7 @@ section {
   color: #fff;
   font-size: 1rem;
   line-height: 2;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
 }
 
 #contact {
@@ -444,15 +411,25 @@ button img:hover {
   width: 100%;
 }
 
+.sns-mobile {
+  display: none;
+}
+
+.sns-desktop {
+  display: block;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+
 .swiper {
   width: 100%;
   height: auto;
   margin-top: 60px;
   margin-bottom: 128px;
   overflow: hidden;
-}
-.swiper-button-prev, .swiper-button-next {
-  display: none;
 }
 .swiper-slide {
   width: 194px;
@@ -461,20 +438,37 @@ button img:hover {
 }
 .swiper-slide img {
   width: 100%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-@media (min-width: 768px) {
-  .swiper-wrapper {
-    display: flex;
-    width: -moz-max-content;
-    width: max-content;
-    animation: swiper 20s linear infinite;
-  }
+.marquee {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 128px;
+  overflow: hidden;
 }
-@keyframes swiper {
+.marquee-track {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+.marquee-track li {
+  width: 194px;
+  height: 194px;
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+.marquee-track li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@keyframes scroll {
   from {
     transform: translateX(0);
   }
@@ -662,6 +656,7 @@ button img:hover {
   }
   .product-inner {
     display: block;
+    padding: 0;
   }
   .product-inner_img {
     display: block;
@@ -699,6 +694,45 @@ button img:hover {
   }
   #sns {
     margin-top: 160px;
+  }
+  .sns-mobile {
+    display: block;
+  }
+  .sns-desktop {
+    display: none;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: block;
+  }
+  .sns-mobile {
+    width: 100%;
+  }
+  .swiper-slide {
+    overflow: hidden;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    top: 50%;
+    margin-top: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+  }
+  .swiper-button-prev {
+    left: 8px;
+  }
+  .swiper-button-next {
+    right: 8px;
   }
   .swiper {
     margin-bottom: 100px;

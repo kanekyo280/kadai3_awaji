@@ -1,11 +1,11 @@
 @use "../global/setting" as *;
 
 #work {
-    max-width: 1280px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .work-content {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,8 @@
 
     & p {
         color: $font-white;
-        letter-spacing: 2px;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
         line-height: 1.5;
     }
 }

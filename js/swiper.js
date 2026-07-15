@@ -1,41 +1,4 @@
-const breakpoint = window.matchMedia('(min-width: 768px)');
-const swiperWrapper = document.querySelector('.swiper-wrapper');
-let mySwiper = null;
-let duplicated = false;
 
-function setupPC() {
-    if (duplicated) return;
-    const slides = swiperWrapper.innerHTML;
-    swiperWrapper.innerHTML = slides + slides;
-    duplicated = true;
-}
-
-function setupSP() {
-    if (mySwiper) return;
-    mySwiper = new Swiper('.swiper', {
-        loop: true,
-        allowTouchMove: false,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-}
-
-function breakpointChecker() {
-    if (breakpoint.matches) {
-    if (mySwiper) {
-        mySwiper.destroy(true, true);
-        mySwiper = null;
-    }
-    setupPC();
-    } else {
-        setupSP();
-    }
-}
-
-breakpoint.addEventListener('change', breakpointChecker);
-breakpointChecker();
 
 
 $('a[href^="#"]').click(function() {
@@ -45,4 +8,16 @@ $('a[href^="#"]').click(function() {
 
     $("html, body").animate({scrollTop:position}, 600, "swing");
     return false;
+});
+
+
+const swiper = new Swiper(".sns-mobile", {
+    loop: true,
+    centeredSlides: true,     // ★中央のスライドを常に真ん中に配置
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
 });

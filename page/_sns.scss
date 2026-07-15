@@ -2,6 +2,20 @@
     width: 100%;
 }
 
+    .sns-mobile {
+        display: none; 
+    }
+    .sns-desktop { 
+        display: block; 
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+
+
+
 .swiper {
     width: 100%;
     height: auto;
@@ -11,10 +25,7 @@
 
     
 
-    &-button-prev,
-    &-button-next {
-        display: none;
-    }
+
 
     &-slide {
         width: 194px;
@@ -24,23 +35,40 @@
 
         & img {
             width: 100%;
-            height: auto;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
 
-@media (min-width: 768px) {
-    .swiper {
-        &-wrapper {
+.marquee {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 128px;
+    overflow: hidden;
+
+    &-track {
         display: flex;
         width: max-content;
-        animation: swiper 20s linear infinite;
-    }
+        animation: scroll 20s linear infinite;
+
+        li {
+            width: 194px;
+            height: 194px;
+            margin-right: 4px;
+            flex-shrink: 0; // ★重要: flexアイテムが縮まないようにする
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }
 
-@keyframes swiper {
+
+@keyframes scroll {
     from {
         transform: translateX(0);
     }

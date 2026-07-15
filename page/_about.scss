@@ -1,26 +1,27 @@
 @use "../global/setting" as *;
 
 #about {
-    max-width: 1280px;
+    width: 100%;
+    height: auto;
     padding: 234px 72px 0;
-    margin: 0 auto;
     position: relative;
 
     & img {
         position: absolute;
-        top: 50px;
-        right: 0;
+        top: 80px;
+        right: 170px;
         width: 586px;
         height: 419px;
     }
 }
 
 .about-container {
+    width: 904px;
+    height: 337px;
+    padding: 60px 0 60px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 1000px;
-    padding: 60px 0 60px 40px;
     background-color: $about-color;
 }
 
@@ -34,5 +35,6 @@
     display: block;
     max-width: 50%;
     line-height: 30px;
-    letter-spacing: 10%;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
 }

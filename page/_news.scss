@@ -1,12 +1,12 @@
 @use "../global/setting" as *;
 
 #news {
-    max-width: 1280px;
+    width: 100%;
     padding: 0 72px;
 }
 
 .news-container {
-    max-width: 500px;
+    max-width: 444px;
     background-color: $news-color;
     padding: 1.5rem 2.5rem;
     border-radius: 30px;

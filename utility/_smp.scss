@@ -225,6 +225,7 @@
 
     .product-inner {
         display: block;
+        padding: 0;
 
         &_img {
             display: block;
@@ -272,6 +273,55 @@
 
     #sns {
         margin-top: 160px;
+    }
+
+    .sns-mobile {
+    display: block;
+}
+
+.sns-desktop {
+    display: none;
+}
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: block;
+    }
+
+    .sns-mobile {
+    width: 100%;
+    }
+
+    .swiper-slide {  // 画像の高さ(デザインに合わせて調整)
+        overflow: hidden;
+
+    }
+
+    // ナビゲーションボタンを丸い半透明の見た目に
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        top: 50%;
+        margin-top: 0;
+        transform: translateY(-50%);
+        z-index: 10;
+
+        &::after {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 8px;
+    }
+
+    .swiper-button-next {
+        right: 8px;
     }
 
     .swiper {
