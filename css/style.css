@@ -13,6 +13,11 @@ img {
   height: auto;
 }
 
+button, a.button {
+  color: inherit;
+  text-decoration: none;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,6 +58,7 @@ a {
 
 #nav {
   width: 100%;
+  z-index: 99;
 }
 
 .nav-content {
@@ -158,31 +164,41 @@ section {
   padding: 0 72px 110px;
   margin-top: 80px;
   height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 .fv-container {
   width: 100%;
-  height: 50%;
+  height: 100%;
   position: relative;
 }
 .fv-visual_onion {
-  width: 800px;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -30%);
+  z-index: 0;
+}
+.fv-visual_circle {
+  width: 450px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -35%);
   z-index: 0;
 }
 .fv-text {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
   color: #fff;
 }
 .fv-text h1 {
@@ -229,11 +245,13 @@ section {
 
 #news {
   width: 100%;
-  padding: 0 72px;
+  padding-left: 72px;
 }
 
 .news-container {
-  max-width: 444px;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 50%;
   background-color: #909294;
   padding: 1.5rem 2.5rem;
   border-radius: 30px;
@@ -246,35 +264,49 @@ section {
 }
 .news-container .news-item {
   display: flex;
+  align-items: center;
   gap: 15px;
   color: #fff;
+}
+.news-container .news-item time {
+  font-size: 0.875rem;
+}
+.news-container .news-item p {
+  font-size: 0.875rem;
 }
 .news-container .news-item:nth-child(2) {
   margin: 8px 0;
 }
 
 #about {
-  width: 100%;
-  height: auto;
   padding: 234px 72px 0;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1260px;
 }
 #about img {
-  position: absolute;
-  top: 80px;
-  right: 170px;
-  width: 586px;
-  height: 419px;
+  width: 50%;
+  max-width: 586px;
+  height: auto;
+  margin-left: -20%;
+  margin-bottom: 20%;
 }
 
 .about-container {
-  width: 904px;
-  height: 337px;
+  width: 100%;
+  max-width: 904px;
+  height: auto;
   padding: 60px 0 60px 40px;
+  background-color: #E1E1E1;
+}
+
+.about-inner {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #E1E1E1;
+  align-items: flex-start;
 }
 
 .about-title {
@@ -284,8 +316,7 @@ section {
 }
 
 .about-text {
-  display: block;
-  max-width: 50%;
+  width: 100%;
   line-height: 30px;
   font-size: 1rem;
   letter-spacing: 0.1em;
@@ -349,8 +380,9 @@ section {
   gap: 100px;
 }
 .product-inner_img {
-  width: 512px;
-  height: 343px;
+  width: 100%;
+  max-width: 512px;
+  height: auto;
 }
 .product-inner:nth-of-type(2) {
   margin: 128px auto;
@@ -358,7 +390,7 @@ section {
 }
 
 .product-text {
-  max-width: 440px;
+  max-width: 100%;
 }
 .product-text h4 {
   color: #fff;
@@ -476,20 +508,46 @@ button img:hover {
     transform: translateX(-50%);
   }
 }
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 767px) {
+  body.scroll-lock {
+    overflow: hidden;
+  }
   #top {
     width: 100%;
     padding: 0 17px;
     box-sizing: border-box;
+    position: relative;
   }
   #nav {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
   }
   .nav-content {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(9, 13, 17, 0.8);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  .nav-content.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 0;
   }
   .nav-smp {
     display: block;
@@ -497,6 +555,17 @@ button img:hover {
     width: 30px;
     height: 30px;
     margin-top: 24px;
+    z-index: 999;
+  }
+  .nav-smp.open .hamburger1 {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  .nav-smp.open .hamburger2 {
+    opacity: 0;
+  }
+  .nav-smp.open .hamburger3 {
+    width: 30px;
+    transform: translateY(-10px) rotate(45deg);
   }
   .hamburger1 {
     width: 30px;
@@ -505,6 +574,7 @@ button img:hover {
     top: 0;
     right: 0;
     background-color: #D9D9D9;
+    transition: all 0.5s;
   }
   .hamburger2 {
     width: 23px;
@@ -513,6 +583,7 @@ button img:hover {
     top: 10px;
     right: 0;
     background-color: #D9D9D9;
+    transition: all 0.5s;
   }
   .hamburger3 {
     width: 16px;
@@ -521,50 +592,35 @@ button img:hover {
     top: 20px;
     right: 0;
     background-color: #D9D9D9;
+    transition: all 0.5s;
   }
   .fv {
     width: 100%;
+    height: 100dvh;
     padding: 0 17px;
     margin: 146px 0 28px;
   }
   .fv-visual_onion {
-    top: 35%;
-    transform: translate(-50%, -35%);
+    width: 300px;
+    top: 15%;
+    transform: translate(-50%, -30%);
   }
   .fv-visual_circle {
-    width: 375px;
-    height: 375px;
-    -o-object-fit: contain;
-       object-fit: contain;
+    width: 400px;
+    top: 15%;
   }
-  .fv-text {
-    top: 35%;
-    left: 55%;
-    transform: translate(-55%, -35%);
+  .fv-text h1 {
+    font-size: 3rem;
   }
-  .fv-title {
+  .fv-text h3 {
     font-size: 1rem;
   }
   button {
     width: 100%;
     max-width: 418px;
   }
-  #about img {
-    width: 100%;
-    max-width: 586px;
-    position: static;
-  }
-  .product-inner img {
-    width: 100%;
-    max-width: 512px;
-  }
-  .fv-visual_circle {
-    width: 100%;
-    max-width: 435px;
-  }
   .scroll {
     width: 100%;
-    padding: 0 17px;
     margin-bottom: 99px;
   }
   .scroll-btn {
@@ -580,32 +636,41 @@ button img:hover {
     margin: 0 auto;
   }
   .news-container {
-    min-width: 342px;
-    height: 142xpx;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     padding: 26px;
   }
   .news-container .news-title {
     font-size: 1rem;
     margin-bottom: 4px;
   }
-  .news-item time, p {
+  .news-container .news-item time, .news-container .news-item p {
     font-size: 0.625rem;
   }
   #about {
     width: 100%;
     padding: 0;
     margin-top: 80px;
+    display: flex;
+    flex-direction: column-reverse;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   #about img {
     width: 100%;
+    max-width: none;
     height: 272px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    margin: 0;
   }
   .about-container {
-    display: block;
-    margin-right: 24px;
+    width: 100%;
+    height: auto;
     padding: 20px 47px 32px 24px;
+    margin-right: 24px;
+  }
+  .about-inner {
+    width: 100%;
   }
   .about-title {
     width: 100%;
@@ -614,6 +679,7 @@ button img:hover {
   .about-text {
     max-width: none;
     font-size: 0.875rem;
+    font-weight: 600;
   }
   .bg-img {
     height: 543px;
@@ -631,10 +697,9 @@ button img:hover {
   }
   #work {
     width: 100%;
-    margin: 0;
   }
   .work-content {
-    display: block;
+    flex-direction: column;
   }
   .work-item {
     width: 100%;
@@ -649,6 +714,7 @@ button img:hover {
     font-size: 1.25rem;
   }
   .product-container {
+    width: 100%;
     padding: 0 17px;
   }
   .product-container_line {
@@ -656,12 +722,15 @@ button img:hover {
   }
   .product-inner {
     display: block;
+    width: 100%;
+    margin: 0 auto;
     padding: 0;
   }
   .product-inner_img {
     display: block;
     width: 100%;
-    height: 237px;
+    max-width: none;
+    height: auto;
   }
   .product-inner:nth-of-type(2) {
     margin: 40px 0;
@@ -721,6 +790,9 @@ button img:hover {
     margin-top: 0;
     transform: translateY(-50%);
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .swiper-button-prev::after,
   .swiper-button-next::after {
@@ -765,5 +837,71 @@ button img:hover {
   }
   .company {
     font-size: 0.625rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #news {
+    width: 100%;
+    padding-right: 72px;
+    margin: 0 auto;
+  }
+  .news-container {
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+  }
+  #about img {
+    width: 50%;
+    margin-bottom: 10%;
+  }
+  .about-container {
+    padding: 40px 0 40px 20px;
+  }
+  .about-inner {
+    width: 60%;
+  }
+  .about-title {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .about-text {
+    width: 100%;
+    line-height: 30px;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+  }
+  .work-content {
+    gap: 40px;
+    padding: 0 17px;
+  }
+  .product-container {
+    padding: 0 17px;
+  }
+  .product-container_line {
+    display: none;
+  }
+  .product-inner {
+    display: block;
+    padding: 0;
+  }
+  .product-inner_img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+  .product-inner:nth-of-type(2) {
+    margin: 40px 0;
+  }
+  .product-text {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .product-text h4 {
+    font-size: 1.5rem;
+  }
+  .product-text p {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

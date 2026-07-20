@@ -1,27 +1,54 @@
 @use "../global/setting" as *;
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 767px) {
 
-//     * {
-//     outline: 1px solid red;
-// }
+
+body.scroll-lock {
+    overflow: hidden;
+}
 
     #top {
         width: 100%;
         padding: 0 17px;
         box-sizing: border-box;
+        position: relative;
     }
 
     #nav {
+        width: 100%;
         display: flex;
         justify-content: flex-end; 
         align-items: center;
-        width: 100%;
     }
 
 
     .nav-content {
-        display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100dvh;
+            background-color: rgba($color: $bg-color, $alpha: 0.8);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+
+            &.open {
+                opacity: 1;
+                visibility: visible;
+            }
     }
+
+    .nav-item {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+    }
+
 
     .nav-smp {
         display: block;
@@ -29,6 +56,21 @@
         width: 30px;
         height: 30px;
         margin-top: 24px;
+        z-index: 999;
+
+        &.open {
+            .hamburger1 {
+            transform: translateY(10px) rotate(-45deg);
+        }
+            .hamburger2 {
+                opacity: 0;
+            }
+
+            .hamburger3 {
+            width: 30px;
+            transform: translateY(-10px) rotate(45deg);
+            }
+        }
     }
 
     .hamburger1 {
@@ -38,7 +80,11 @@
         top: 0;
         right: 0;
         background-color: $hamburger;
+        transition: all 0.5s;
     }
+
+
+    
 
     .hamburger2 {
         width: 23px;
@@ -47,6 +93,7 @@
         top: 10px;
         right: 0;
         background-color: $hamburger;
+        transition: all 0.5s;
     }
 
     .hamburger3 {
@@ -56,33 +103,38 @@
         top: 20px;
         right: 0;
         background-color: $hamburger;
+        transition: all 0.5s;
     }
 
     .fv {
         width: 100%;
+        height: 100dvh;
         padding: 0 17px;
         margin: 146px 0 28px;
 
         &-visual_onion {
-            top: 35%;
-            transform: translate(-50%, -35%);
+            width: 300px;
+            top: 15%;
+            transform: translate(-50%, -30%);
         }
 
         &-visual_circle {
-            width: 375px;
-            height: 375px;
-            object-fit: contain;
-        }
+            width: 400px;
+            top: 15%;
+        } 
 
         &-text {
-            top: 35%;
-            left: 55%;
-            transform: translate(-55%, -35%);
+
+
+            & h1 {
+                font-size: 3rem;
+            }   
+
+            & h3 {
+                font-size: 1rem;
+            }
         }
 
-        &-title {
-            font-size: 1rem;
-        }
     }
 
     button {
@@ -90,25 +142,9 @@
         max-width: 418px; // PCでは418pxを保ちつつ、スマホでは画面幅に収める
     }
 
-    #about img {
-        width: 100%;
-        max-width: 586px;
-        position: static; // スマホでは絶対配置をやめるなど、レイアウト自体の見直しも必要になる可能性が高い
-    }
-
-    .product-inner img {
-        width: 100%;
-        max-width: 512px;
-    }
-
-    .fv-visual_circle {
-        width: 100%;
-        max-width: 435px;
-    }
 
     .scroll {
         width: 100%;
-        padding: 0 17px;
         margin-bottom: 99px;
 
         &-btn {
@@ -130,36 +166,49 @@
     }
 
     .news-container {
-        min-width: 342px;
-        height: 142xpx;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
         padding: 26px;
 
         & .news-title {
             font-size: 1rem;
             margin-bottom: 4px;
         }
-    }
 
-    .news-item time, p {
+        & .news-item time, 
+        &  .news-item p{
         font-size: 0.625rem;
     }
+    }
+
+    
     
     #about {
         width: 100%;
         padding: 0;
         margin-top: 80px;
+        display: flex;
+        flex-direction: column-reverse;
+        object-fit: contain;
 
         & img {
             width: 100%;
+            max-width: none;
             height: 272px;
-            object-fit: cover;
+            margin: 0;
         }
     }
 
     .about-container {
-        display: block;
-        margin-right: 24px;
+        width: 100%;
+        height: auto;
         padding: 20px 47px 32px 24px;
+        margin-right: 24px;
+    }
+
+    .about-inner {
+        width: 100%;
     }
 
     .about-title {
@@ -170,6 +219,7 @@
     .about-text {
         max-width: none;
         font-size: 0.875rem;
+        font-weight: 600;
     }
 
     .bg-img {
@@ -192,11 +242,10 @@
 
     #work {
         width: 100%;
-        margin: 0;
     }
 
     .work-content {
-        display: block;
+        flex-direction: column;
     }
 
     .work-item {
@@ -216,7 +265,9 @@
     }
 
     .product-container {
+        width: 100%;
         padding: 0 17px;
+
 
         &_line {
             display: none;
@@ -225,12 +276,15 @@
 
     .product-inner {
         display: block;
+        width: 100%;
+        margin: 0 auto;
         padding: 0;
 
         &_img {
             display: block;
             width: 100%;
-            height: 237px;
+            max-width: none;
+            height: auto;
         }
 
         &:nth-of-type(2) {
@@ -308,6 +362,9 @@
         margin-top: 0;
         transform: translateY(-50%);
         z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &::after {
             font-size: 14px;

@@ -1,0 +1,87 @@
+@use "../global/setting" as *;
+@media (min-width: 768px) and (max-width: 1023px) {
+        #news {
+        width: 100%;
+        padding-right: 72px;
+        margin: 0 auto;
+    }
+
+    .news-container {
+        width: 100%;
+        max-width: 80%;
+        height: auto;
+    }
+
+    #about {
+
+    & img {
+        width: 50%;
+        margin-bottom: 10%;
+    }
+}
+
+    .about-container {
+    padding: 40px 0 40px 20px;
+}
+
+    .about-inner {
+    width: 60%;
+}
+
+
+    .about-title {
+    font-size: 1.5rem;
+    color: $font-black;
+    margin-bottom: 10px;
+}
+
+.about-text {
+    width: 100%;
+    line-height: 30px;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+}
+
+    .work-content {
+    gap: 40px;
+    padding: 0 17px;
+    }
+
+    .product-container {
+        padding: 0 17px;
+
+        &_line {
+            display: none;
+        }
+    }
+
+    .product-inner {
+        display: block;
+        padding: 0;
+
+        &_img {
+            display: block;
+            width: 100%;
+            max-width: none;
+            height: auto;
+        }
+
+        &:nth-of-type(2) {
+            margin: 40px 0;
+        }
+    }
+
+    .product-text {
+        width: 100%;
+        margin-bottom: 24px;
+
+        & h4 {
+            font-size: 1.5rem;
+        }
+
+        & p {
+            font-size: 1rem;
+        }
+    }
+
+}

@@ -21,3 +21,18 @@ const swiper = new Swiper(".sns-mobile", {
         prevEl: ".swiper-button-prev",
     },
 });
+
+$(function() {
+    $('.nav-smp').on('click', function() {
+        console.log('clicked')
+        $(this).toggleClass('open');
+        $('.nav-content').toggleClass('open');
+        $('body').toggleClass('scroll-lock');
+    });
+
+    $('.nav-content a').on('click', function() {
+        $('.nav-smp').removeClass('open');
+        $('.nav-content').removeClass('open');
+        $('body').removeClass('scroll-lock');
+    });
+});

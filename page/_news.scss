@@ -2,11 +2,12 @@
 
 #news {
     width: 100%;
-    padding: 0 72px;
+    padding-left: 72px;
 }
 
 .news-container {
-    max-width: 444px;
+    width: fit-content;
+    max-width: 50%;
     background-color: $news-color;
     padding: 1.5rem 2.5rem;
     border-radius: 30px;
@@ -20,8 +21,17 @@
 
     & .news-item {
         display: flex;
+        align-items: center;
         gap: 15px;
         color: $font-white;
+
+        & time {
+            font-size: 0.875rem;
+        }
+
+        & p {
+            font-size: 0.875rem;
+        }
 
         &:nth-child(2) {
             margin: 8px 0;
